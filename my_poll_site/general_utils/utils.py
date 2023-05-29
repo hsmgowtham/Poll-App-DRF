@@ -3,8 +3,6 @@ def get_formatted_response(
 ):
     """
     - Created custom method to manage DRF/REST API response with generic response format
-    - Suppose if we changing the format then front-end side having clashes to manage UI response
-    - So created 3 payloads as response
     """
     response = {
         "status": status,

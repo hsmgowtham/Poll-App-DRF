@@ -1,45 +1,69 @@
 # Poll-App
 A Simple Poll app that lists available polls, take votes, show results.
 
-# SETUP
-### Initial
-- create project
+## Table of Contents
+
+- [Introduction](#introduction)
+- [Prerequisites](#prerequisites)
+- [Setup](#setup)
+- [Usage](#usage)
+- [Configuration](#configuration)
+- [Contributing](#contributing)
+- [License](#license)
+
+## Introduction
+The Polls app is personal project developed in python that create polls, takes votes, show results. This project is a rest framework extension of existing Django Project Tutorial - the Polls App.
+
+## Prerequisites
+
+Before using the Polls App, ensure you have the following prerequisites:
+
+- Python 3.7 or above
+
+## SETUP
+**Initial Setup**
+
+1. Install the required dependencies:
+
+```
+pip install -r requirements.txt
+```
+2. create project
 ```
 django-admin startproject my_poll_site
 ```
-- create polls app
+3. create polls app
 ```
 python manage.py startapp polls
-```
-### DB
-- install Postgre sql adapter
-```
-pip install psycopg2
-```
-- Login to postgresql as super user, create user and grant permissions
+``` 
+4. Login to postgresql as super user
 ```
 sudo -i -u postgres
+```
+5. create user and grant permissions
+```
 psql
 Create user hsmgowtham with SUPERUSER;
 ALTER USER hsmgowtham WITH PASSWORD 'hsmgowtham';
 ```
-- create table for the polls app and grant permissions
+6. create table for the polls app and grant permissions
 ```
 CREATE DATABASE poll_app
     WITH
     OWNER = hsmgowtham;
 GRANT ALL ON DATABASE otoo_db TO hsmgowtham;
 ```
-### Installed Apps to DB
-- To create db tables for the installed apps
+**Installed Apps to DB**
+
+4. To create db tables for the installed apps
 ```
 python manage.py migrate
 ```
-- create migration files for the polls app model changes
+5. create migration files for the polls app model changes
 ```
 python manage.py makemigrations polls
 ```
-# Extra Command line utilities
+## Extra Command line utilities
 - to check what sql will get executed for models code
 ```
 python manage.py sqlmigrate polls 0001
